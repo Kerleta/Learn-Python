@@ -13,28 +13,24 @@ data_tekanan_darah = {
 }
 
 def tanya_tekanan_darah():
-    # Pilih kategori usia secara acak
     kategori = random.choice(list(data_tekanan_darah.keys()))
     
-    # Pilih jenis tekanan darah secara acak (sistolik atau diastolik)
     jenis_tekanan = random.choice(["sistolik", "diastolik"])
     
-    # Ambil rentang tekanan darah yang sesuai
     rentang_tekanan = data_tekanan_darah[kategori][jenis_tekanan]
     
-    # Tanyakan pertanyaan kepada pengguna
     print(f"Berapakah rentang tekanan darah {jenis_tekanan} untuk {kategori}?")
     
-    # Tunggu jawaban pengguna
+
     jawaban = input("Jawaban Anda: ")
     
-    # Cek jawaban pengguna
+
     if jawaban.strip() == rentang_tekanan:
         print("Jawaban Anda benar!")
     else:
         print(f"Jawaban Anda salah. Jawaban yang benar adalah {rentang_tekanan}.")
 
-# Loop untuk terus menanyakan pertanyaan
+
 while True:
     tanya_tekanan_darah()
     lagi = input("Apakah Anda ingin mencoba lagi? (ya/tidak): ").strip().lower()
